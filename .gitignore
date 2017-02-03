@@ -6,6 +6,7 @@ onlineform.sublime-workspace
 onlineform.sublime-project
 pip-selfcheck.json
 src/onlineform/secrets.py
+onlineform/secrets.py
 .idea/
 src/reflect/__pycache__/*.pyc
 src/onlineform/__pycache__/*.pyc
