@@ -2,24 +2,23 @@
 {% load i18n %}
 {% load static %}
 {% block header %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/angular-material.css'%}">
+	<link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css">
 	<link rel="stylesheet" type="text/css" href="https://material.angularjs.org/1.1.1/docs.css">	
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
 {% endblock %}
 {% block content %}
-
-<div class='row'>
-<div class='col-sm-6 col-sm-offset-3'>
-<h1>Login</h1>
-<form method="post" action=".">
-  {% csrf_token %}
-  {{ form.as_p }} <!--可能用cripsy美化-->
-
-  <input class='btn btn-block btn-primary' type="submit" value="Log In" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
+<div class='login-page'>
+	<div class='row login-container'>
+		<div class="col-md-12 ">
+		<h1> 歡迎回來，<br>請登入你的學聯會福利部帳號</h1>
+		<form method="post" action=".">
+		  {% csrf_token %}
+		  {{ form.as_p }} <!--可能用cripsy美化-->
+		  <input class='btn btn-block btn-primary' type="submit" value="Log In" />
+		  <input type="hidden" name="next" value="{{ next }}" />
+		</form>
+		</div>
+	</div>
 </div>
-</div>
-
 {% endblock %}

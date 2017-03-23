@@ -3,15 +3,19 @@
 {% load static %}
 {% block header %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/angular-material.css'%}">
-	<link rel="stylesheet" type="text/css" href="https://material.angularjs.org/1.1.1/docs.css">	
+	<link rel="stylesheet" type="text/css" href="https://material.angularjs.org/1.1.1/docs.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">	
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
 {% endblock %}
 {% block content %}
-
-<h1 class="text-align-center">{{title}}</h1>
-<div class="row">
-<div ng-controller="formCtrl" ng-cloak="" class="checkboxSyncing col-md-10 col-md-offset-1" ng-app="MyApp">
+<div class="row landing" >
+<div class="col-md-12 landing"><div class="background-landing"></div></div>
+</div>
+<div class="row" >
+<div ng-controller="formCtrl" ng-cloak="" class="checkboxSyncing col-md-10 col-md-offset-1" ng-app="MyApp" id="two">
+	<h3 class="text-align-center">遇到不合理的規則、或是校園中應該被重視與處理的問題，都可以告訴我們!
+您的個人資料將僅用於後續回覆，我們不會公開您的任何資料。</h3>
 	<form method="POST" action="" name="userForm">{% csrf_token %}
 		<md-content layout-padding="">
 			<div layout-gt-sm="row">
@@ -86,8 +90,11 @@
 
 </div>
 	<footer>
-		<a href="{% url 'auth_login' %}">學聯會登入</a>
+		<a href="https://stunion.nctu.edu.tw"><img src="{% static 'img/logo-7b90bd7a65589cdcf4f492b18ca73b0b2572f3aea7780b44f37de83dfc4ed24d.png' %}" class="stunion-logo"></a>
 	</footer>
+	<script src="https://use.typekit.net/qia4xjj.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="{% static 'js/angular.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/angular-route.min.js'%}"></script>
 	<script type="text/javascript" src="{% static 'js/angular-aria.min.js'%}"></script>
